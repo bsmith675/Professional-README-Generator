@@ -16,5 +16,48 @@ const promptUser = () => {
             },
             {
                 type: "input",
-                
+                message: "What is the name of this lovely project?",
+                name: "projectName",
+            },
+            {
+                type: "input",
+                message: "Thats a cool name. Can you provide a description of the project? Remember to answer the 'what', 'why' and 'how' .",
+                name: "Description",
+            },
+            {
+                type: "list",
+                message: "what kind of license do you want for the project?",
+                name: "license",
+                choices: ["MIT", "Gpl-3.0", "Unlicense", "Apache-2.0", "None"],
+            },
+            {
+                type: "input",
+                message: "What do you want the user to know regarding the usage of your project?",
+                name: "usage",
+            },
+            {
+                type: "input",
+                message: "Do you want list instructions regarding how to install your project?",
+                name: "install",
+            },
+            {
+                type: "input",
+                message: "What do you want the user to know about contributing to your projects?",
+                name: "contributing",
+            },
+            {
+                type: "input",
+                message: "How can the user run tests for your projects?",
+                name: "tests",
+            },
+        ])
+        .then(function(answers) {
+            return answers;
+        });
+
+};
+
+async function init()   {
+    
 }
+
