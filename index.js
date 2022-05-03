@@ -58,6 +58,18 @@ const promptUser = () => {
 };
 
 async function init()   {
-    
+    try{
+        const answers = await promptUser();
+        githubAPI.Data(answers.username).then(async (github) => {
+            const ghLicense = await githubAPI.License(answers.license);
+            const readMe = generateReadme(answers, github);
+            await writeFileAsync("README.md", readMe);
+            await writeFileAsync("License.txt", ghLicense);
+            console.log("Created README!");
+        });
+    }   catch (err) {
+        console.log(err);
+    }
+        
 }
 
