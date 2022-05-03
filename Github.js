@@ -20,4 +20,22 @@ const githubAPI = {
     },
 
 Data: (username) => {
+    const queryURL = `https://api.github.com/users/${username}/events/public`;
+    return axios
+        .get(queryUrl) 
+        .then(function (res) {
+            const { avatar_url } = res.data[0].actor;
+            const { email } = res.data[0].payload.commits[0].author;
+
+            return {
+                avatar_url,
+                email,
+            };
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+    }
 }
+
+module.exports = githubAPI;
