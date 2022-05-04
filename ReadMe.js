@@ -27,9 +27,6 @@ const generateReadme = (answers, githubInfo) => {
 
     <p style="strong"> If you have questions contact ${githubInfo.email}.</p>
     <img src="${githubInfo.avatar_url}" alt="git hub profile picture" height="225" width="250">
-    <img src="https://img.shields.io/badge/Node-12.16.3-brightgreen">
-    <img src="https://img.shields.io/badge/-JavaScript-brightgreen">
-    <img src="https://img.shields.io/github/followers/denzgrant?label=follow&style=social">
 `;
 
 }
